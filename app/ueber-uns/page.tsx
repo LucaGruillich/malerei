@@ -25,7 +25,7 @@ export default function UeberUnsPage() {
         title="Ein Betrieb mit Handschrift"
         intro="In Erftstadt zu Hause und im ganzen Rhein-Erft-Kreis für Sie im Einsatz. Aus einem kleinen Familienbetrieb ist ein eingespieltes Team geworden, das sein Handwerk liebt und Wert auf saubere, ehrliche Arbeit legt."
         image={{
-          src: "/images/ueber-uns-team.svg",
+          src: "/images/ueber-uns-team.webp",
           alt: "Das Team des Malerbetriebs bei der Arbeit",
         }}
       />

@@ -26,7 +26,7 @@ export default function KarrierePage() {
         title="Werden Sie Teil unseres Teams"
         intro="Sie mögen Handwerk, wollen etwas Sichtbares schaffen und suchen einen Betrieb, der Sie ernst nimmt? Dann passen Sie vielleicht gut zu uns. Wir bilden aus und freuen uns über Verstärkung."
         image={{
-          src: "/images/karriere-team.svg",
+          src: "/images/karriere-team.webp",
           alt: "Team des Malerbetriebs im Arbeitsalltag",
         }}
       >
@@ -101,7 +101,7 @@ export default function KarrierePage() {
               <h2 className="text-xl">Ihr Ansprechpartner</h2>
               <div className="mt-6 flex items-center gap-4">
                 <SiteImage
-                  src="/images/ansprechpartner.svg"
+                  src="/images/ansprechpartner.webp"
                   alt="Porträt des Ansprechpartners für Bewerbungen"
                   width={800}
                   height={1000}

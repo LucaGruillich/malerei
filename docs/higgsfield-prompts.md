@@ -1,121 +1,163 @@
-# Higgsfield-Prompts: Bildwelt Malerbetrieb
+# Bildwelt Malermeisterbetrieb Mario Fais
 
-> Fertige Generierungs-Prompts für jedes benötigte Visual. Stilistisch
-> einheitlich, passend zur Markenfarbe #A25430 (Terrakotta). Nach dem Rendern die Datei
-> unter dem angegebenen Pfad in `public/images/` ablegen (gleicher Name,
-> gleiches Seitenverhältnis). Der Code bindet sie automatisch ein.
+Dieses Dokument ist die verbindliche Grundlage für alle Visuals der Website.
+Teil 1 beschreibt den Style-Guide, Teil 2 enthält die fertigen Prompts.
+Jeder Prompt setzt sich zusammen aus dem STYLE-Block und dem Motiv-Block, damit
+alle Bilder wirken, als kämen sie aus einem einzigen Fotoshooting mit einem
+einzigen Fotografen an einem einzigen Tag.
 
-## Einheitlicher Stil (in jeden Prompt übernehmen)
+Generiert wird mit Higgsfield, Modell `gpt_image_2`, Qualität high.
+Ablage als WebP unter `public/images/`, Dateiname wie im Code referenziert.
 
-**Style-Preset:** `Editorial photography, natural soft daylight, calm and
-premium, warm cream and terracotta palette with clay accents (#A25430),
-clean composition, generous negative space, shallow depth of field,
-photorealistic, high detail, no text, no logos, no watermark.`
-
-**Negative Prompt:** `cartoon, illustration, oversaturated, cluttered,
-harsh flash, text, watermark, logo, distorted hands, low quality.`
-
-Format je Bild siehe Überschrift. Menschen freundlich und authentisch,
-Arbeitskleidung schlicht, gern mit dezent blauem Detail.
+**Stand 16.07.2026:** Alle 19 Bilder sind generiert und liegen im Projekt.
+Heroes 1600 px breit, Projekte 1200 x 1200, Porträts 800 x 1000. Jede Datei
+unter 150 KB. Wer ein Bild neu generieren will, nimmt den Prompt aus Teil 2 und
+konvertiert danach mit
+`magick bild.png -resize 1600x -quality 82 -define webp:method=6 ziel.webp`.
 
 ---
 
-## Heroes (3:2, quer)
+## Teil 1: Style-Guide
 
-### `hero-home.svg` → Startseite
-`A professional painter in clean workwear rolling fresh light paint onto a
-smooth interior wall, bright airy room, soft daylight from a side window,
-calm premium mood, deep-blue accent detail on the clothing.` — 3:2
+### Grundidee
 
-### `leistung-innenanstrich.svg`
-`Freshly painted bright living room, crisp clean edges where wall meets
-ceiling, roller and paint tray resting neatly, warm soft daylight, serene
-and tidy atmosphere.` — 3:2
+Kein Handwerker-Stock. Die Bilder erzählen ein ruhiges, sauberes Ergebnis und
+einen Betrieb, dem man den Schlüssel zur Wohnung gibt. Vertrauen entsteht durch
+Ordnung im Bild, nicht durch Lächeln in die Kamera. Deshalb: aufgeräumte Szenen,
+klare Kanten, viel Luft, wenig Requisiten.
 
-### `leistung-fassade.svg`
-`Newly painted house facade in a calm neutral tone, clean rendered surface,
-part of scaffolding subtly visible at the edge, clear soft daylight, subtle
-deep-blue detail.` — 3:2
+### Licht
 
-### `leistung-lack-holzschutz.svg`
-`Close-up of a smoothly lacquered wooden interior door with a flawless even
-finish, brush and small paint can beside it, soft natural light, craftsmanship
-feel.` — 3:2
+Weiches, indirektes Tageslicht aus einer klar erkennbaren Richtung, meist von
+links seitlich durch ein Fenster. Kontrast niedrig bis mittel, Schatten offen
+und weich, keine harten Kanten. Außenaufnahmen bei leicht bedecktem Himmel oder
+in der Stunde vor Sonnenuntergang, nie in praller Mittagssonne. Kein Blitz, kein
+Kunstlicht-Mischlicht.
 
-### `leistung-tapezieren-wandgestaltung.svg`
-`Elegant living room with one tastefully wallpapered accent wall in a subtle
-pattern, calm interior styling, soft daylight, premium and inviting.` — 3:2
+### Farbwelt
 
-### `leistung-waermedaemmung.svg`
-`Exterior house facade with a freshly rendered insulation surface, worker
-smoothing plaster, clean modern building, bright overcast daylight, subtle
-blue accent.` — 3:2
+Basis: warmes Creme, gebrochenes Weiß, heller Kalkputz, natürliches Holz.
+Akzent: Terrakotta #A25430, sparsam gesetzt, ein bis zwei Flächen pro Bild.
+Sekundär: ein tiefes, entsättigtes Blau in der Arbeitskleidung, als ruhiger
+Gegenpol zum Terrakotta.
+Keine Signalfarben, kein Neon, keine bunten Eimer und Verpackungen im Bild.
 
-### `ueber-uns-team.svg` → Über uns
-`A small friendly team of painters in clean workwear standing together in a
-bright freshly painted room, natural candid mood, soft daylight, authentic
-and approachable.` — 3:2
+### Kamera, Brennweite, Perspektive
 
-### `karriere-team.svg` → Karriere
-`Young apprentice and experienced painter working side by side, teaching
-moment, bright interior, tools in hand, warm encouraging atmosphere, soft
-daylight.` — 3:2
+Vollformat, gerechnet auf Blende f/2.8 bis f/4.
+- Räume und Fassaden: 35 mm, Kamera auf Augenhöhe, Linien senkrecht gehalten
+- Menschen bei der Arbeit: 50 mm, leicht seitlich, nie frontal posiert
+- Details und Handwerk: 85 mm, nah, Schärfe auf der Materialkante
+- Porträts: 85 mm, Brusthöhe, Augenhöhe
 
----
+Immer ein natürlicher Beobachterstandpunkt. Keine Froschperspektive, keine
+Drohnenansicht, kein Weitwinkel unter 35 mm, keine gekippten Horizonte.
 
-## Karten (4:3)
+### Komposition
 
-### `karte-einzugsgebiet.svg` / `karte-standort.svg`
-Hier ist ein **echtes Kartenwerkzeug** die bessere Wahl als ein generiertes
-Bild. Empfehlung: statische Karte (z. B. eingebettete Karte mit
-datenschutzkonformer Einwilligung, siehe Datenschutz) mit markiertem Gebiet
-bzw. Standort. Falls dennoch ein Platzhalter-Visual gewünscht ist:
-`Minimal stylized regional map illustration, soft neutral tones, a single
-terracotta location marker (#A25430), clean and calm, lots of white space.` — 4:3
+Motiv sitzt außermittig auf einer Drittellinie. Mindestens ein Drittel der
+Fläche bleibt ruhige, fast leere Wand oder Himmel, das ist die Luft, in die
+später Typo gesetzt werden kann. Vordergrund frei, keine angeschnittenen
+Objekte am unteren Rand. Bei Personen bleibt Blickrichtung ins Bild hinein.
 
----
+### Bildsprache und Casting
 
-## Referenzen / Projekte (1:1, quadratisch)
+Menschen sind Handwerker, keine Models. Alter gemischt 20 bis 55, echte
+Gesichter, Gebrauchsspuren erlaubt, saubere schlichte Arbeitskleidung ohne
+Aufdrucke. Kein Blick in die Kamera außer bei Porträts. Kein Daumen hoch, keine
+verschränkten Arme, keine gestellte Teamaufstellung. Hände immer plausibel am
+Werkzeug.
 
-Durchgehend als **Vorher-Nachher-fähige** Ergebnisbilder denken, ruhig und
-sauber. Je Datei ein Motiv:
+### Nachbearbeitung
 
-- `projekt-1.svg` — `Freshly painted bright apartment room, clean walls,
-  tidy result.`
-- `projekt-2.svg` — `Renovated house facade with a fresh even coat, clean
-  exterior.`
-- `projekt-3.svg` — `Newly lacquered white interior doors, flawless finish.`
-- `projekt-4.svg` — `Stylish accent wall with subtle wallpaper in a calm
-  living room.`
-- `projekt-5.svg` — `Freshly painted stairwell with clean handrail and bright
-  walls.`
-- `projekt-6.svg` — `Insulated and newly rendered house facade, modern and
-  tidy.`
+Sanfter Filmlook: leicht angehobene Schwarzwerte, milde Highlight-Rolloff,
+feines Korn, natürliche Hauttöne, keine Klarheits- oder HDR-Anhebung, keine
+Vignette, keine Sättigungsspitzen. Weißabgleich leicht warm.
 
-Alle 1:1, im einheitlichen Stil oben.
+### STYLE-Block (wörtlich in jeden Prompt)
 
----
+```
+STYLE: editorial architectural photography, single cohesive photo shoot, full-frame
+camera, f/2.8-f/4, soft indirect daylight from one clear side window direction, low
+contrast, open soft shadows, warm cream and off-white base palette, terracotta accent
+#A25430 used sparingly on one or two surfaces, deep desaturated blue workwear as
+secondary accent, subject placed off-centre on a third, at least one third of the frame
+left as calm empty wall or sky for headline space, vertical lines kept straight, natural
+observer eye-level viewpoint, gentle film grade with lifted blacks and soft highlight
+rolloff, fine grain, natural skin tones, warm white balance, photorealistic, no text, no
+logos, no watermark, no signage.
+```
 
-## Team-Porträts (4:5, hochkant)
+### NEGATIVE-Block (wörtlich in jeden Prompt)
 
-### `team-1.svg` bis `team-4.svg`
-`Authentic professional portrait of a [Rolle: Malermeister / Vorarbeiter /
-Maler / Auszubildende(r)] in clean workwear, friendly natural expression,
-soft studio-like daylight, neutral background with a faint deep-blue tone,
-approachable and trustworthy.` — 4:5
-
-> Hinweis: Team-Fotos möglichst durch **echte Aufnahmen** der Mitarbeitenden
-> ersetzen. Gesichter schaffen Vertrauen, generierte Personen nur als Übergang.
-
-### `ansprechpartner.svg` → Karriere
-`Friendly portrait of the business owner in clean workwear, warm and open
-expression, soft daylight, neutral background.` — 4:5
+```
+NEGATIVE: cartoon, illustration, 3d render, cgi, hdr, oversaturated, neon colours,
+cluttered scene, colourful buckets or packaging, harsh flash, midday sun, wide-angle
+distortion, tilted horizon, drone view, low angle, posed team lineup, thumbs up, crossed
+arms, looking at camera (except portraits), stock photo smile, text, watermark, logo,
+brand names, distorted hands, extra fingers, low quality.
+```
 
 ---
 
-## Siegel / Qualifikation (1:1, klein)
+## Teil 2: Prompts je Bild
 
-### `siegel-meisterbetrieb.svg`, `siegel-innung.svg`, `siegel-zertifikat.svg`
-Keine generierten Bilder verwenden. Hier gehören die **echten, offiziellen
-Logos und Siegel** hin (Meisterbetrieb, zuständige Innung, vorhandene
-Zertifikate). Diese liefert der Kunde als Vektor- oder PNG-Datei.
+Aufbau je Bild: `STYLE-Block` + `SHOT:` + `SCENE:` + `NEGATIVE-Block`.
+
+### Heroes, 3:2
+
+| Datei | SHOT | SCENE |
+|---|---|---|
+| `hero-home` | 50mm, slightly from the side, painter on the left third | A painter in deep desaturated blue workwear rolling fresh off-white paint onto a smooth interior wall, mid-motion, bright empty room, one terracotta wall visible in the background, soft daylight from the left window, calm and unhurried |
+| `leistung-innenanstrich` | 35mm, eye level, room corner on the right third | A freshly painted bright living room, crisp clean edge where wall meets ceiling, a roller and a clean paint tray resting neatly on a covered floor, warm soft daylight, serene and tidy, no people |
+| `leistung-fassade` | 35mm, eye level, facade on the right two thirds, sky on the left | A newly painted residential house facade in a calm warm neutral tone, evenly rendered surface, a small section of clean scaffolding at the far edge, soft overcast daylight, open sky above |
+| `leistung-lack-holzschutz` | 85mm, close, door edge running diagonally | Close-up of a smoothly lacquered wooden interior door with a flawless even finish, a fine brush and a small plain paint can beside it, soft natural light grazing across the surface, craftsmanship detail |
+| `leistung-tapezieren-wandgestaltung` | 35mm, eye level, accent wall on the right third | Elegant calm living room with one tastefully wallpapered accent wall in a subtle tone-on-tone pattern, restrained interior styling, soft daylight, generous empty space |
+| `leistung-waermedaemmung` | 50mm, slightly from the side, worker on the right third | A worker in deep desaturated blue workwear smoothing fresh render onto an insulated exterior facade, clean modern building, soft overcast daylight, plain sky above |
+| `ueber-uns-team` | 35mm, eye level, group loosely on the right | Three painters in clean workwear pausing between tasks in a bright freshly painted room, natural candid conversation, nobody posing, tools set down, soft daylight from the left |
+| `karriere-team` | 50mm, from the side, both figures on the left third | A young apprentice and an experienced painter working side by side on a wall, a real teaching moment, hands on tools, bright interior, warm encouraging atmosphere |
+
+### Projekte, 1:1
+
+Ergebnisbilder, keine Menschen, ruhig und sauber.
+
+| Datei | SHOT | SCENE |
+|---|---|---|
+| `projekt-1` | 35mm, eye level | Freshly painted bright apartment room, clean off-white walls, tidy finished result, soft daylight |
+| `projekt-2` | 35mm, eye level | Renovated residential house facade with a fresh even warm neutral coat, clean exterior, soft overcast light |
+| `projekt-3` | 85mm, close | Newly lacquered white interior doors, flawless finish, clean frame edge, soft grazing light |
+| `projekt-4` | 35mm, eye level | Calm living room with a subtle tone-on-tone wallpapered accent wall, restrained styling |
+| `projekt-5` | 35mm, eye level | Freshly painted stairwell with a clean handrail and bright walls, daylight from above |
+| `projekt-6` | 35mm, eye level | Insulated and newly rendered house facade, modern and tidy, plain sky |
+
+### Porträts, 3:4
+
+SHOT für alle: `85mm, chest up, eye level, subject on a third, looking calmly at camera`
+
+> GPT Image 2 kennt kein 4:5. Porträts laufen deshalb auf 3:4, das kommt dem
+> gewünschten Hochformat am nächsten.
+
+| Datei | Rolle | SCENE |
+|---|---|---|
+| `team-1` | Mario Fais, Inhaber, Malermeister | Authentic portrait of a master painter in his late forties, clean plain workwear, calm confident expression, soft daylight, plain warm cream background |
+| `team-2` | Andreas Berg, Vorarbeiter | Authentic portrait of a foreman painter in his forties, clean plain workwear, friendly grounded expression, soft daylight, plain warm cream background |
+| `team-3` | Kevin Roth, Maler | Authentic portrait of a painter in his late twenties, clean plain workwear, open natural expression, soft daylight, plain warm cream background |
+| `team-4` | Lena Faber, Auszubildende | Authentic portrait of a female apprentice painter in her early twenties, clean plain workwear, attentive natural expression, soft daylight, plain warm cream background |
+| `ansprechpartner` | Karriere-Kontakt | Nicht separat generieren. Der Ansprechpartner auf der Karriereseite ist Mario Fais, also dieselbe Person wie `team-1`. Zwei verschiedene Gesichter für einen Namen fliegen sofort auf. `ansprechpartner.webp` ist deshalb eine Kopie von `team-1.webp`. |
+
+> Generierte Gesichter sind eine Übergangslösung. Sobald echte Aufnahmen des
+> Teams vorliegen, ersetzen. Ein erfundenes Gesicht mit echtem Namen unter der
+> Rubrik "Unser Team" ist auf Dauer nicht haltbar.
+
+---
+
+## Nicht generieren
+
+**Siegel** (`siegel-meisterbetrieb`, `siegel-innung`, `siegel-zertifikat`):
+Hier gehören die echten offiziellen Logos hin. Generierte Siegel wären eine
+erfundene Qualifikation, also eine Falschangabe. Kunde liefert Vektor oder PNG.
+
+**Karten** (`karte-einzugsgebiet`, `karte-standort`): Eine erfundene Karte hilft
+niemandem bei der Orientierung. Besser eine echte statische Karte mit
+markiertem Gebiet, eingebunden mit datenschutzkonformer Einwilligung. Die
+aktuellen SVG-Platzhalter bleiben so lange bestehen.

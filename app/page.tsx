@@ -67,7 +67,7 @@ export default function HomePage() {
             </div>
             <div className="reveal">
               <SiteImage
-                src="/images/hero-home.svg"
+                src="/images/hero-home.webp"
                 alt="Maler bei der Arbeit in einem hellen, frisch gestrichenen Raum"
                 width={1200}
                 height={800}

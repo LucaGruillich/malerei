@@ -52,7 +52,7 @@ export const services: Service[] = [
       "Wände und Decken in frischen Farben. Sauber abgedeckt, zügig fertig.",
     hero: "Frische Farbe für Wohnzimmer, Flur oder das ganze Haus. Wir decken sauber ab, arbeiten zügig und hinterlassen einen Raum, in dem Sie sich sofort wohlfühlen.",
     heroImage: {
-      src: "/images/leistung-innenanstrich.svg",
+      src: "/images/leistung-innenanstrich.webp",
       alt: "Frisch gestrichener, heller Innenraum mit sauberen Kanten",
     },
     includes: [
@@ -103,7 +103,7 @@ export const services: Service[] = [
       "Schützt vor Wetter und macht Ihr Haus wieder ansehnlich.",
     hero: "Eine gepflegte Fassade schützt Ihr Haus vor Wind und Wetter und macht optisch sofort etwas her. Wir bereiten den Untergrund vor und bringen einen Anstrich auf, der viele Jahre hält.",
     heroImage: {
-      src: "/images/leistung-fassade.svg",
+      src: "/images/leistung-fassade.webp",
       alt: "Frisch gestrichene Hausfassade in ruhigem Farbton",
     },
     includes: [
@@ -150,7 +150,7 @@ export const services: Service[] = [
     teaser: "Türen, Zargen und Holzbauteile, langlebig behandelt.",
     hero: "Türen, Zargen, Fensterrahmen und Holzbauteile brauchen ab und zu eine Auffrischung. Wir bereiten die Oberflächen vor und lackieren so, dass es lange schön bleibt und geschützt ist.",
     heroImage: {
-      src: "/images/leistung-lack-holzschutz.svg",
+      src: "/images/leistung-lack-holzschutz.webp",
       alt: "Sauber lackierte Zimmertür mit gleichmäßiger Oberfläche",
     },
     includes: [
@@ -196,7 +196,7 @@ export const services: Service[] = [
     teaser: "Von schlicht bis kreativ, passend zu Ihrem Raum.",
     hero: "Von der schlichten Raufaser bis zur ausgefallenen Mustertapete oder einer besonderen Wandtechnik. Wir setzen Ihre Wand genau so um, wie Sie sie sich vorstellen.",
     heroImage: {
-      src: "/images/leistung-tapezieren-wandgestaltung.svg",
+      src: "/images/leistung-tapezieren-wandgestaltung.webp",
       alt: "Wohnraum mit gestalteter Akzentwand und Tapete",
     },
     includes: [
@@ -242,7 +242,7 @@ export const services: Service[] = [
     teaser: "WDVS für weniger Heizkosten und mehr Wohnkomfort.",
     hero: "Ein Wärmedämm-Verbundsystem hält die Wärme im Haus und senkt die Heizkosten. Wir bringen die Dämmung fachgerecht an und geben der Fassade gleich einen frischen Anstrich.",
     heroImage: {
-      src: "/images/leistung-waermedaemmung.svg",
+      src: "/images/leistung-waermedaemmung.webp",
       alt: "Gedämmte Hausfassade mit sauber verputzter Oberfläche",
     },
     includes: [

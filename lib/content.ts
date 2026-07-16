@@ -11,12 +11,12 @@ export type Project = {
 };
 
 export const projects: Project[] = [
-  { image: "/images/projekt-1.svg", caption: "Wohnung streichen, Liblar", category: "Innen" },
-  { image: "/images/projekt-2.svg", caption: "Fassade erneuern, Lechenich", category: "Fassade" },
-  { image: "/images/projekt-3.svg", caption: "Türen lackieren, Kierdorf", category: "Lack" },
-  { image: "/images/projekt-4.svg", caption: "Akzentwand, Gymnich", category: "Tapezieren" },
-  { image: "/images/projekt-5.svg", caption: "Treppenhaus, Weilerswist", category: "Innen" },
-  { image: "/images/projekt-6.svg", caption: "Wärmedämmung, Brühl", category: "Dämmung" },
+  { image: "/images/projekt-1.webp", caption: "Wohnung streichen, Liblar", category: "Innen" },
+  { image: "/images/projekt-2.webp", caption: "Fassade erneuern, Lechenich", category: "Fassade" },
+  { image: "/images/projekt-3.webp", caption: "Türen lackieren, Kierdorf", category: "Lack" },
+  { image: "/images/projekt-4.webp", caption: "Akzentwand, Gymnich", category: "Tapezieren" },
+  { image: "/images/projekt-5.webp", caption: "Treppenhaus, Weilerswist", category: "Innen" },
+  { image: "/images/projekt-6.webp", caption: "Wärmedämmung, Brühl", category: "Dämmung" },
 ];
 
 export const referenceFilters = [
@@ -73,10 +73,10 @@ export type TeamMember = { image: string; name: string; role: string };
 // Der Inhaber ist Mario Fais. Die weiteren Namen sind Beispielangaben und
 // vom Betrieb durch die echten Teammitglieder zu ersetzen.
 export const team: TeamMember[] = [
-  { image: "/images/team-1.svg", name: "Mario Fais", role: "Inhaber, Malermeister" },
-  { image: "/images/team-2.svg", name: "Andreas Berg", role: "Vorarbeiter" },
-  { image: "/images/team-3.svg", name: "Kevin Roth", role: "Maler" },
-  { image: "/images/team-4.svg", name: "Lena Faber", role: "Auszubildende" },
+  { image: "/images/team-1.webp", name: "Mario Fais", role: "Inhaber, Malermeister" },
+  { image: "/images/team-2.webp", name: "Andreas Berg", role: "Vorarbeiter" },
+  { image: "/images/team-3.webp", name: "Kevin Roth", role: "Maler" },
+  { image: "/images/team-4.webp", name: "Lena Faber", role: "Auszubildende" },
 ];
 
 export const certifications = [
