@@ -1,26 +1,185 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+  Design-System Malerbetrieb
+  ---------------------------------------------------------------
+  Premium, reduziert, viel Weissraum. Die Markenfarbe #A25430
+  (warmes Terrakotta, angelehnt an den bestehenden Auftritt von
+  Mario Fais) wird gezielt als Akzent gesetzt. Alle Tokens sind hier
+  zentral definiert und werden ueber Tailwind-Utilities genutzt.
+  Dokumentation: docs/design-system.md
+*/
+
+@theme {
+  /* Farbsystem rund um die Markenfarbe #A25430 (Terrakotta) */
+  --color-brand: #a25430; /* Primaer-CTA, Akzente, aktive Navigation */
+  --color-brand-strong: #85401f; /* Hover / Active */
+  --color-brand-soft: #d89a72; /* helle Akzente, Fokusringe auf dunkel */
+  --color-brand-tint: #f7eee7; /* zarte Flaechen, Hover auf hell */
+  --color-brand-tint-strong: #efe0d4;
+
+  /* Neutraltoene, warm abgestimmt auf das Terrakotta */
+  --color-ink: #211c18; /* Fliesstext, Haupttext */
+  --color-ink-soft: #47403a; /* Sekundaertext */
+  --color-muted: #6e6157; /* Hilfstext, Captions */
+  --color-line: #eae2db; /* Trennlinien, Rahmen */
+  --color-line-strong: #dbd1c7;
+  --color-surface: #ffffff; /* Karten, Formulare */
+  --color-canvas: #fbf7f3; /* Seitenhintergrund, warmes Creme */
+  --color-canvas-alt: #f5eee7; /* abgesetzte Sektionen */
+
+  /* Signalfarben (dezent) */
+  --color-success: #1f7a5a;
+  --color-danger: #b42318;
+
+  /* Typografie */
+  --font-sans:
+    var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Arial, sans-serif;
+  --font-display:
+    var(--font-bricolage), "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  /* Radius, konsistent ueber alle Sektionen */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+
+  /* Schatten, weich und subtil */
+  --shadow-sm: 0 1px 2px rgba(21, 21, 28, 0.04), 0 1px 3px rgba(21, 21, 28, 0.06);
+  --shadow-md: 0 6px 24px -8px rgba(21, 21, 28, 0.12);
+  --shadow-lg: 0 24px 60px -20px rgba(162, 84, 48, 0.24);
+
+  /* Bewegung */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* Basis-Layer */
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Ueberschriften nutzen die Display-Schrift mit ruhiger, klarer Hierarchie */
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--color-ink);
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Sichtbare, kontrastreiche Fokus-Indikatoren (WCAG 2.2 AA) */
+  :focus-visible {
+    outline: 3px solid var(--color-brand);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* Auf dunklen Flaechen heller Fokusring */
+  .on-dark :focus-visible {
+    outline-color: #ffffff;
+  }
+
+  ::selection {
+    background: var(--color-brand);
+    color: #fff;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/*
+  Sanfte Scroll-Einblendungen ueber CSS scroll-driven animations.
+  Inhalt bleibt sichtbar, wenn der Browser die Technik nicht kennt oder
+  der Nutzer reduzierte Bewegung wuenscht. Kein JavaScript noetig.
+*/
+@layer utilities {
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal {
+        opacity: 0;
+        transform: translateY(16px);
+        animation: reveal-in 0.7s var(--ease-out) forwards;
+        animation-timeline: view();
+        animation-range: entry 0% cover 24%;
+      }
+    }
+  }
+
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.35s var(--ease-out);
+  }
+  .link-underline:hover {
+    background-size: 100% 1px;
+  }
+
+  /* Endlos laufende Kundenstimmen-Leiste (Marquee) */
+  .marquee-track {
+    animation: marquee 34s linear infinite;
+  }
+  .marquee:hover .marquee-track,
+  .marquee:focus-within .marquee-track {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes reveal-in {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Respektiert Nutzerpraeferenz: keine Bewegung */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+  /* Marquee steht still und zeigt die Karten von Anfang an */
+  .marquee-track {
+    animation: none !important;
+    transform: none !important;
+  }
 }
